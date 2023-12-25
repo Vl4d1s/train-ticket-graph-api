@@ -1,4 +1,4 @@
-# Train Ticket Graph API
+# Home Exercise - Backslash
 
 ## Decisions
 
@@ -26,3 +26,5 @@ for example:
 ### Assumptions
 
 I assumed that the client side needs the extra information located in each node, so I left the data as it is.
+
+I assumed that the service name is "unique," so I chose it for the ID. However, it would be better to generate a numerical unique ID instead.
