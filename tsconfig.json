@@ -20,7 +20,8 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "resolveJsonModule": true
   },
   "exclude": ["node_modules"],
   "include": ["."]
