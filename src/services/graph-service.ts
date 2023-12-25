@@ -1,11 +1,28 @@
-import { Graph } from "../types";
+import { Node, Edge, OldEdge, Graph } from "../types";
+import fs from "fs";
+import path from "path";
 
-export const getGraphStructure = (): Graph => {
+export function createGraph(): Graph {
   try {
-    const graphData = require("../data/train-ticket-graph.json");
-    return graphData as Graph;
+    const graph = JSON.parse(
+      fs.readFileSync(
+        path.resolve(process.cwd(), "./src/data/train-ticket-graph.json"),
+        "utf-8"
+      )
+    );
+
+    const nodes: Node[] = graph.nodes.map((node: Node) => ({
+      ...node,
+      id: node.name,
+    }));
+
+    const edges: Edge[] = graph.edges
+      .map((edge: OldEdge) => edge.to.map((to) => ({ from: edge.from, to })))
+      .flat();
+
+    return { edges, nodes };
   } catch (error) {
-    console.error(`Failed to get graph data: ${error}`);
-    return { nodes: [], edges: [] };
+    console.error("Error creating graph:", error);
+    throw error;
   }
-};
+}

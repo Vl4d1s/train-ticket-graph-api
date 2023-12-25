@@ -1,0 +1,496 @@
+{
+  "edges": [
+    { "from": "frontend", "to": "admin-basic-info-service" },
+    { "from": "admin-basic-info-service", "to": "contacts-service" },
+    { "from": "admin-basic-info-service", "to": "station-service" },
+    { "from": "admin-basic-info-service", "to": "train-service" },
+    { "from": "admin-basic-info-service", "to": "price-service" },
+    { "from": "admin-basic-info-service", "to": "config-service" },
+    { "from": "admin-order-service", "to": "order-service" },
+    { "from": "admin-order-service", "to": "order-other-service" },
+    { "from": "admin-route-service", "to": "route-service" },
+    { "from": "admin-route-service", "to": "station-service" },
+    { "from": "admin-travel-service", "to": "train-service" },
+    { "from": "admin-travel-service", "to": "travel-service" },
+    { "from": "admin-travel-service", "to": "travel2-service" },
+    { "from": "admin-travel-service", "to": "station-service" },
+    { "from": "admin-travel-service", "to": "route-service" },
+    { "from": "admin-user-service", "to": "user-service" },
+    { "from": "auth-service", "to": "verification-code-service" },
+    { "from": "auth-service", "to": "prod-postgresdb" },
+    { "from": "basic-service", "to": "station-service" },
+    { "from": "basic-service", "to": "route-service" },
+    { "from": "basic-service", "to": "train-service" },
+    { "from": "basic-service", "to": "price-service" },
+    { "from": "cancel-service", "to": "notification-service" },
+    { "from": "cancel-service", "to": "order-service" },
+    { "from": "cancel-service", "to": "order-other-service" },
+    { "from": "cancel-service", "to": "inside-payment-service" },
+    { "from": "cancel-service", "to": "user-service" },
+    { "from": "consign-service", "to": "consign-price-service" },
+    { "from": "execute-service", "to": "order-service" },
+    { "from": "execute-service", "to": "order-other-service" },
+    { "from": "food-delivery-service", "to": "station-food-service" },
+    { "from": "food-service", "to": "train-food-service" },
+    { "from": "food-service", "to": "travel-service" },
+    { "from": "food-service", "to": "station-food-service" },
+    { "from": "inside-payment-service", "to": "order-service" },
+    { "from": "inside-payment-service", "to": "order-other-service" },
+    { "from": "inside-payment-service", "to": "payment-service" },
+    { "from": "inside-payment-service", "to": "prod-sqs" },
+    { "from": "order-other-service", "to": "station-service" },
+    { "from": "order-service", "to": "station-service" },
+    { "from": "order-service", "to": "prod-postgresdb" },
+    { "from": "preserve-other-service", "to": "basic-service" },
+    { "from": "preserve-other-service", "to": "notification-service" },
+    { "from": "preserve-other-service", "to": "seat-service" },
+    { "from": "preserve-other-service", "to": "user-service" },
+    { "from": "preserve-other-service", "to": "assurance-service" },
+    { "from": "preserve-other-service", "to": "station-service" },
+    { "from": "preserve-other-service", "to": "security-service" },
+    { "from": "preserve-other-service", "to": "contacts-service" },
+    { "from": "preserve-other-service", "to": "order-other-service" },
+    { "from": "preserve-other-service", "to": "food-service" },
+    { "from": "preserve-other-service", "to": "consign-service" },
+    { "from": "preserve-other-service", "to": "travel2-service" },
+    { "from": "preserve-service", "to": "basic-service" },
+    { "from": "preserve-service", "to": "notification-service" },
+    { "from": "preserve-service", "to": "seat-service" },
+    { "from": "preserve-service", "to": "user-service" },
+    { "from": "preserve-service", "to": "assurance-service" },
+    { "from": "preserve-service", "to": "station-service" },
+    { "from": "preserve-service", "to": "security-service" },
+    { "from": "preserve-service", "to": "travel-service" },
+    { "from": "preserve-service", "to": "contacts-service" },
+    { "from": "preserve-service", "to": "order-service" },
+    { "from": "preserve-service", "to": "food-service" },
+    { "from": "preserve-service", "to": "consign-service" },
+    { "from": "rebook-service", "to": "seat-service" },
+    { "from": "rebook-service", "to": "train-service" },
+    { "from": "rebook-service", "to": "route-service" },
+    { "from": "rebook-service", "to": "travel-service" },
+    { "from": "rebook-service", "to": "travel2-service" },
+    { "from": "rebook-service", "to": "order-service" },
+    { "from": "rebook-service", "to": "order-other-service" },
+    { "from": "rebook-service", "to": "inside-payment-service" },
+    { "from": "rebook-service", "to": "prod-sqs" },
+    { "from": "route-plan-service", "to": "travel-service" },
+    { "from": "route-plan-service", "to": "route-service" },
+    { "from": "route-plan-service", "to": "travel2-service" },
+    { "from": "seat-service", "to": "order-service" },
+    { "from": "seat-service", "to": "order-other-service" },
+    { "from": "seat-service", "to": "config-service" },
+    { "from": "security-service", "to": "order-service" },
+    { "from": "security-service", "to": "order-other-service" },
+    { "from": "travel-plan-service", "to": "seat-service" },
+    { "from": "travel-plan-service", "to": "route-plan-service" },
+    { "from": "travel-plan-service", "to": "travel-service" },
+    { "from": "travel-plan-service", "to": "travel2-service" },
+    { "from": "travel-plan-service", "to": "train-service" },
+    { "from": "travel-service", "to": "basic-service" },
+    { "from": "travel-service", "to": "train-service" },
+    { "from": "travel-service", "to": "route-service" },
+    { "from": "travel-service", "to": "seat-service" },
+    { "from": "travel2-service", "to": "basic-service" },
+    { "from": "travel2-service", "to": "train-service" },
+    { "from": "travel2-service", "to": "route-service" },
+    { "from": "travel2-service", "to": "seat-service" },
+    { "from": "user-service", "to": "auth-service" },
+    { "from": "wait-order-service", "to": "order-service" },
+    { "from": "wait-order-service", "to": "contacts-service" }
+  ],
+  "nodes": [
+    {
+      "name": "frontend",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/frontend",
+      "publicExposed": true,
+      "id": "frontend"
+    },
+    {
+      "name": "gateway-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-gateway-service",
+      "publicExposed": true,
+      "id": "gateway-service"
+    },
+    {
+      "name": "auth-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-auth-service",
+      "publicExposed": false,
+      "vulnerabilities": [
+        {
+          "file": "train-ticket/ts-auth-service/src/main/java/auth/service/impl/UserServiceImpl.java",
+          "severity": "medium",
+          "message": "Detected string concatenation with a non-literal variable in a SQL statement. This could lead to SQL injection if the variable is user-controlled and not properly sanitized.",
+          "metadata": {
+            "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          }
+        }
+      ],
+      "id": "auth-service"
+    },
+    {
+      "name": "verification-code-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-verification-code-service",
+      "publicExposed": false,
+      "id": "verification-code-service"
+    },
+    {
+      "name": "ticket-office-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-ticket-office-service",
+      "publicExposed": false,
+      "id": "ticket-office-service"
+    },
+    {
+      "name": "user-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-user-service",
+      "publicExposed": false,
+      "id": "user-service"
+    },
+    {
+      "name": "admin-user-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-admin-user-service",
+      "publicExposed": false,
+      "id": "admin-user-service"
+    },
+    {
+      "name": "food-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-food-service",
+      "publicExposed": false,
+      "id": "food-service"
+    },
+    {
+      "name": "station-food-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-station-food-service",
+      "publicExposed": false,
+      "id": "station-food-service"
+    },
+    {
+      "name": "food-delivery-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-food-delivery-service",
+      "publicExposed": false,
+      "id": "food-delivery-service"
+    },
+    {
+      "name": "security-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-security-service",
+      "publicExposed": false,
+      "id": "security-service"
+    },
+    {
+      "name": "consign-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-consign-service",
+      "publicExposed": false,
+      "id": "consign-service"
+    },
+    {
+      "name": "consign-price-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-consign-price-service",
+      "publicExposed": false,
+      "id": "consign-price-service"
+    },
+    {
+      "name": "contacts-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-contacts-service",
+      "publicExposed": false,
+      "id": "contacts-service"
+    },
+    {
+      "name": "basic-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-basic-service",
+      "publicExposed": false,
+      "id": "basic-service"
+    },
+    {
+      "name": "train-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-train-service",
+      "publicExposed": false,
+      "id": "train-service"
+    },
+    {
+      "name": "route-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-route-service",
+      "publicExposed": false,
+      "id": "route-service"
+    },
+    {
+      "name": "station-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-station-service",
+      "publicExposed": false,
+      "id": "station-service"
+    },
+    {
+      "name": "route-plan-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-route-plan-service",
+      "publicExposed": false,
+      "id": "route-plan-service"
+    },
+    {
+      "name": "admin-route-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-admin-route-service",
+      "publicExposed": false,
+      "id": "admin-route-service"
+    },
+    {
+      "name": "price-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-price-service",
+      "publicExposed": false,
+      "id": "price-service"
+    },
+    {
+      "name": "admin-basic-info-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-admin-basic-info-service",
+      "publicExposed": false,
+      "id": "admin-basic-info-service"
+    },
+    {
+      "name": "admin-order-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-admin-order-service",
+      "publicExposed": false,
+      "id": "admin-order-service"
+    },
+    {
+      "name": "admin-travel-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-admin-travel-service",
+      "publicExposed": false,
+      "id": "admin-travel-service"
+    },
+    {
+      "name": "avatar-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-avatar-service",
+      "publicExposed": false,
+      "id": "avatar-service"
+    },
+    {
+      "name": "cancel-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-cancel-service",
+      "publicExposed": false,
+      "id": "cancel-service"
+    },
+    {
+      "name": "config-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-config-service",
+      "publicExposed": false,
+      "id": "config-service"
+    },
+    {
+      "name": "execute-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-execute-service",
+      "publicExposed": false,
+      "id": "execute-service"
+    },
+    {
+      "name": "inside-payment-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-inside-payment-service",
+      "publicExposed": false,
+      "id": "inside-payment-service"
+    },
+    {
+      "name": "news-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-news-service",
+      "publicExposed": false,
+      "id": "news-service"
+    },
+    {
+      "name": "notification-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-notification-service",
+      "publicExposed": false,
+      "id": "notification-service"
+    },
+    {
+      "name": "order-other-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-order-other-service",
+      "publicExposed": false,
+      "id": "order-other-service"
+    },
+    {
+      "name": "order-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-order-service",
+      "publicExposed": false,
+      "vulnerabilities": [
+        {
+          "file": "train-ticket/ts-order-service/src/main/java/order/service/OrderServiceImpl.java",
+          "severity": "high",
+          "message": "File open from tainted variable\n",
+          "metadata": {
+            "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          }
+        },
+        {
+          "file": "train-ticket/ts-order-service/src/main/java/order/service/OrderServiceImpl.java",
+          "severity": "medium",
+          "message": "Detected string concatenation with a non-literal variable in a SQL statement. This could lead to SQL injection if the variable is user-controlled and not properly sanitized.",
+          "metadata": {
+            "cwe": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          }
+        }
+      ],
+      "id": "order-service"
+    },
+    {
+      "name": "payment-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-payment-service",
+      "publicExposed": false,
+      "id": "payment-service"
+    },
+    {
+      "name": "preserve-other-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-preserve-other-service",
+      "publicExposed": false,
+      "id": "preserve-other-service"
+    },
+    {
+      "name": "preserve-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-preserve-service",
+      "publicExposed": false,
+      "id": "preserve-service"
+    },
+    {
+      "name": "rebook-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-rebook-service",
+      "publicExposed": false,
+      "id": "rebook-service"
+    },
+    {
+      "name": "seat-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-seat-service",
+      "publicExposed": false,
+      "id": "seat-service"
+    },
+    {
+      "name": "train-food-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-train-food-service",
+      "publicExposed": false,
+      "id": "train-food-service"
+    },
+    {
+      "name": "travel-plan-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-travel-plan-service",
+      "publicExposed": false,
+      "id": "travel-plan-service"
+    },
+    {
+      "name": "travel-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-travel-service",
+      "publicExposed": false,
+      "id": "travel-service"
+    },
+    {
+      "name": "travel2-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-travel2-service",
+      "publicExposed": false,
+      "id": "travel2-service"
+    },
+    {
+      "name": "ui-dashboard",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-ui-dashboard",
+      "publicExposed": false,
+      "id": "ui-dashboard"
+    },
+    {
+      "name": "wait-order-service",
+      "kind": "service",
+      "language": "java",
+      "path": "train-ticket/ts-wait-order-service",
+      "publicExposed": false,
+      "id": "wait-order-service"
+    },
+    {
+      "name": "prod-postgresdb",
+      "kind": "rds",
+      "metadata": { "cloud": "AWS", "engine": "postgres", "version": "9.6" },
+      "id": "prod-postgresdb"
+    },
+    {
+      "name": "prod-sqs",
+      "kind": "sqs",
+      "metadata": { "cloud": "AWS" },
+      "id": "prod-sqs"
+    }
+  ]
+}

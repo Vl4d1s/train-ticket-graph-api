@@ -415,7 +415,7 @@
     },
     {
       "from": "consign-service",
-      "to": "consign-price-service"
+      "to": ["consign-price-service"]
     },
     {
       "from": "execute-service",

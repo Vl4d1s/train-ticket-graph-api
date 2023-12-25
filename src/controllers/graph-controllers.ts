@@ -1,21 +1,40 @@
 import { Request, Response } from "express";
 
-import { getGraphStructure } from "../services/graph-service";
+import { createGraph } from "../services/graph-service";
+import { FilterKey, FiltersDictionary } from "../types";
+import {
+  extractFilters,
+  filterRoutesEndingInSink,
+  filterRoutesPublicToSink,
+  filterRoutesWithVulnerabilities,
+} from "../helpers";
+
+const filtersDictionary: FiltersDictionary = {
+  endInSink: filterRoutesEndingInSink,
+  publicToSink: filterRoutesPublicToSink,
+  withVulnerabilities: filterRoutesWithVulnerabilities,
+  // Add other filters here
+};
 
 const getGraph = (req: Request, res: Response) => {
   try {
-    const graphStracture = getGraphStructure();
-    const nodes = graphStracture.nodes;
-    const edges = graphStracture.edges.map((edge) => ({
-      source: edge.from,
-      target: edge.to,
-    }));
+    const graph = createGraph();
+    let filteredGraph = graph;
 
-    const graph = { nodes, edges };
+    const filters = extractFilters(req.query.filters as string);
 
-    res.json(graph);
-  } catch (error) {
-    res.status(500).send("Failed to get graph");
+    filters.forEach((filter) => {
+      const filterFunction = filtersDictionary[filter as FilterKey];
+      if (filterFunction) {
+        filteredGraph = filterFunction(filteredGraph);
+      } else {
+        throw new Error(`Invalid filter: ${filter}`);
+      }
+    });
+
+    res.json(filteredGraph);
+  } catch (error: any) {
+    res.status(500).send(`Failed to get graph: ${error.message}`);
   }
 };
 

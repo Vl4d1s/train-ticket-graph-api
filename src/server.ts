@@ -3,6 +3,7 @@ import express, { type Express } from "express";
 import morgan from "morgan";
 import cors from "cors";
 import graphRoutes from "./routes/graph-routes";
+import path from "node:path";
 
 export const createServer = (): Express => {
   const app = express();
@@ -12,7 +13,10 @@ export const createServer = (): Express => {
     .use(urlencoded({ extended: true }))
     .use(json())
     .use(cors())
-    .use("/api/graph/", graphRoutes);
-
+    .use("/api/v1/graph/", graphRoutes)
+    .use(express.static(path.join(__dirname, "public")))
+    .get("/", (req, res) => {
+      res.sendFile(path.join(__dirname, "public/index.html"));
+    });
   return app;
 };
