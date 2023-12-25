@@ -2,8 +2,8 @@ import { json, urlencoded } from "body-parser";
 import express, { type Express } from "express";
 import morgan from "morgan";
 import cors from "cors";
+
 import graphRoutes from "./routes/graph-routes";
-import path from "node:path";
 
 export const createServer = (): Express => {
   const app = express();
