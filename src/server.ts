@@ -13,10 +13,7 @@ export const createServer = (): Express => {
     .use(urlencoded({ extended: true }))
     .use(json())
     .use(cors())
-    .use("/api/v1/graph/", graphRoutes)
-    .use(express.static(path.join(__dirname, "public")))
-    .get("/", (req, res) => {
-      res.sendFile(path.join(__dirname, "public/index.html"));
-    });
+    .use("/api/v1/graph/", graphRoutes);
+
   return app;
 };
