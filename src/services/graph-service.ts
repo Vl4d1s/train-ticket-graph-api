@@ -1,6 +1,7 @@
-import { Node, Edge, OldEdge, Graph } from "../types";
 import fs from "fs";
 import path from "path";
+
+import { Node, Edge, OldEdge, Graph } from "../types";
 
 export function createGraph(): Graph {
   try {
