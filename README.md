@@ -23,7 +23,22 @@ I desited to go with one endpoint, I didn't see the need to add another one to t
 for example:
 `http://localhost:5001/api/v1/graph?filters=endInSink,withVulnerabilities`
 
-### Assumptions
+### Response
+
+I think it would be nice to provide the client with an additional metadata:
+
+```
+{
+  graph: filteredGraph,
+  metadata: {
+    appliedFilters,
+    nodeCount: filteredGraph.nodes.length,
+    edgeCount: filteredGraph.edges.length,
+  },
+}
+```
+
+## Assumptions
 
 I assumed that the client side needs the extra information located in each node, so I left the data as it is.
 

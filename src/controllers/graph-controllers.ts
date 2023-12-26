@@ -11,17 +11,26 @@ const getGraph = (req: Request, res: Response) => {
     let filteredGraph = graph;
 
     const filters = extractFilters(req.query.filters as string);
+    const appliedFilters: string[] = [];
 
     filters.forEach((filter) => {
       const filterFunction = filtersDictionary[filter as FilterKey];
       if (filterFunction) {
         filteredGraph = filterFunction(filteredGraph);
+        appliedFilters.push(filter);
       } else {
         throw new Error(`Invalid filter: ${filter}`);
       }
     });
 
-    res.json(filteredGraph);
+    res.json({
+      graph: filteredGraph,
+      metadata: {
+        appliedFilters,
+        nodeCount: filteredGraph.nodes.length,
+        edgeCount: filteredGraph.edges.length,
+      },
+    });
   } catch (error: any) {
     res.status(500).send(`Failed to get graph: ${error.message}`);
   }
