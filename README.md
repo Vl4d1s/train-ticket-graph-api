@@ -16,7 +16,7 @@ To be honest, I have never used a graph library before, but after conducting a q
 
 - `GET /graph`: This endpoint returns the entire graph structure, optionally filtered by the provided filters.
 
-  The filters are provided as a comma-separated list in the `filters` query parameter. For example, to apply `filter1` and `filter2`, you would send a request to `/graph?filters=filter1,filter2`.
+  The filters are provided as a comma-separated list in the `filters` query parameter. For example, to apply `filter1` and `filter2`, you would send a request to `/graph?filters=publicToSink,endInSink,withVulnerabilities`.
 
 I desited to go with one endpoint, I didn't see the need to add another one to the filters.
 
@@ -28,3 +28,31 @@ for example:
 I assumed that the client side needs the extra information located in each node, so I left the data as it is.
 
 I assumed that the service name is "unique," so I chose it for the ID. However, it would be better to generate a numerical unique ID instead.
+
+### Steps to add your own filter
+
+To add a filter, follow these steps:
+
+1. In the `types/index.ts` file, add an optional filter name to the `Filter` interface with a type of `string`.
+
+```typescript
+export interface Filter {
+  endInSink?: string;
+  withVulnerabilities?: string;
+  publicToSink?: string;
+  yourNewFilterHere?: string; // add filter name
+}
+```
+
+2. `in filters/index.ts` file:
+   1. Write a filter function.
+   2. Add the same filter name to `FiltersDictionary` along with a reference to your new filter function.
+
+```javascript
+export const filtersDictionary: FiltersDictionary = {
+  endInSink: filterRoutesEndingInSink,
+  publicToSink: filterRoutesPublicToSink,
+  withVulnerabilities: filterRoutesWithVulnerabilities,
+  yourNewFilterHere: yourFilterFunctionReference, // add filter reference
+};
+```

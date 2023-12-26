@@ -1,20 +1,9 @@
 import { Request, Response } from "express";
 
+import { FilterKey } from "../types";
+import { filtersDictionary } from "../filters";
+import { extractFilters } from "../filters/utils";
 import { createGraph } from "../services/graph-service";
-import { FilterKey, FiltersDictionary } from "../types";
-import {
-  extractFilters,
-  filterRoutesEndingInSink,
-  filterRoutesPublicToSink,
-  filterRoutesWithVulnerabilities,
-} from "../helpers";
-
-const filtersDictionary: FiltersDictionary = {
-  endInSink: filterRoutesEndingInSink,
-  publicToSink: filterRoutesPublicToSink,
-  withVulnerabilities: filterRoutesWithVulnerabilities,
-  // Add other filters here
-};
 
 const getGraph = (req: Request, res: Response) => {
   try {
