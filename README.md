@@ -27,4 +27,4 @@ for example:
 
 I assumed that the client side needs the extra information located in each node, so I left the data as it is.
 
-I assumed that the service name is "unique," so I chose it for the ID. However, it would be better to generate a numerical unique ID instead.
+I assumed that the service name is unique, so I chose it for the ID. However, it would be better to generate a numerical unique ID instead.
